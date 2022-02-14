@@ -1,14 +1,14 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Splunk row coloring",
   "description": "Colors Rows in Splunk based on configurable options",
   "version": "1.0",
-  "browser_action": {
+  "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["shared.js"]
+    "service_worker": "shared.js"
   },
   "content_scripts": [
     {
@@ -16,5 +16,5 @@
       "matches": ["https://*/*"]
     }
   ],
-  "permissions": ["storage"]
+  "permissions": ["scripting", "storage"]
 }
